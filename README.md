@@ -1,3 +1,7 @@
+You need to log in to Add/Edit/Delete receipts using next email and password:
+test@email.com
+123456
+
 # CookBook
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
