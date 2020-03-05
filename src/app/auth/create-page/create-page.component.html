@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h1>Creating new Receipt</h1>
+
+  <div class="form-control"
+       [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}">
+    <label for="title">Title:</label>
+    <input id="title" type="text" formControlName="title">
+    <div *ngIf="form.get('title').touched && form.get('title').invalid" class="validation">
+      <small *ngIf="form.get('title').errors.required">Enter name of Receipt!</small>
+
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label>Receipt:</label>
+    <quill-editor formControlName="text"></quill-editor>
+  </div>
+
+  <div class="form-control"
+       [ngClass]="{invalid: form.get('author').touched && form.get('author').invalid}">
+    <label for="author">Author:</label>
+    <input id="author" type="text" formControlName="author">
+    <div *ngIf="form.get('author').touched && form.get('author').invalid" class="validation">
+      <small *ngIf="form.get('author').errors.required">Enter author!</small>
+
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-dark" [disabled]="form.invalid">
+    Create new Receipt
+  </button>
+
+</form>

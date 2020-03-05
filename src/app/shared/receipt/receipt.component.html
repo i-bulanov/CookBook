@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">
+    <h2>{{ receipt.title }}</h2>
+
+    <small>{{ receipt.date | date: 'dd:MM:yyyy'}}</small>
+  </div>
+
+  <div>
+    <small>{{ receipt.author }}</small>
+  </div>
+
+  <button [routerLink]="['/receipt', receipt.id]" class="btn btn-dark">Open Receipt</button>
+</div>

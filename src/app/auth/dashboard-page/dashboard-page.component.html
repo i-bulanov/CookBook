@@ -1,0 +1,34 @@
+
+<div *ngIf="posts.length; else loading">
+  <div class="form-control">
+    <input type="text" placeholder="Type in title to find the receipt..." [(ngModel)]="searchStr">
+  </div>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Author</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let post of posts | searchTitle:searchStr; let i = index">
+    <td>{{i + 1}}</td>
+    <td>{{post.author}}</td>
+    <td>{{post.title}}</td>
+    <td>{{post.date | date: 'medium':null:'ua'}}</td>
+    <td>
+      <button class="btn btn-link open" [routerLink]="['/auth', 'receipt', post.id, 'edit']">Edit</button>
+      <a (click)="remove(post.id)">Remove</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+<ng-template #loading>
+  <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</ng-template>
+

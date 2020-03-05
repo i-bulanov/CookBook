@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a{
+  color: #333333;
+
+  &:hover{
+    color: #333333;
+  }
+}

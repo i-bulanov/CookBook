@@ -1,0 +1,9 @@
+<div class="receipts" *ngIf="receipts$ | async as receipts; else loading">
+  <app-receipt *ngFor="let receipt of receipts" [receipt]="receipt">
+
+  </app-receipt>
+</div>
+
+<ng-template #loading>
+  <p class="text-center">Loading...</p>
+</ng-template>

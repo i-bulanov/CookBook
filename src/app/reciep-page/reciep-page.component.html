@@ -1,0 +1,22 @@
+<div *ngIf="receipt$ | async as receipt; else loading">
+<div class="receipt">
+  <div class="header">
+    <h1>{{receipt.title}}</h1>
+
+    <button routerLink="/" class="btn btn-link">To Home Page</button>
+  </div>
+
+  <div class="info">
+    <strong>{{receipt.author}}</strong>
+    <small>{{receipt.date | date: 'medium':null:'ua'}}</small>
+  </div>
+
+  <div>
+    <quill-view-html [content]="receipt.text"></quill-view-html>
+  </div>
+</div>
+</div>
+
+<ng-template #loading>
+  <p class="text-center">Loading...</p>
+</ng-template>
