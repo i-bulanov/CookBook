@@ -1,5 +1,5 @@
 You need to log in to Add/Edit/Delete receipts using next email and password:
-test@email.com
+test1@mail.com
 123456
 
 # CookBook
